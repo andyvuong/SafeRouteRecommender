@@ -1,8 +1,9 @@
 {
-    "name":"410Project",
-    "version": "0.0.0",
-    "dependencies": {
-        "express": "*"
-
-    }
+  "name": "410Project",
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "*",
+    "morgan": "~1.5.2",
+    "body-parser": "~1.12.3"
+  }
 }
