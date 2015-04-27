@@ -11,9 +11,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
-
 app.get('/',function(req,res){
-    res.sendFile(path.join(__dirname+'/views/index.html'));
+    res.sendFile(path.join(__dirname+'/views/template/index.html'));
 });
 
 // router
