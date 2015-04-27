@@ -1,3 +1,3 @@
 module.exports = function (app) {
-    //app.use('/test', require('./routes/test'));
+    app.use('/access', require('./routes/access'));
 };
