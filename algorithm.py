@@ -1,5 +1,6 @@
 import json
-import xml.etree.ElementTree as ET 
+import xml.etree.ElementTree as ET
+from math import radians, cos, sin, asin, sqrt
 
 #This reads in the crimes.json file that contains the JSON data that was crawled from the UIUC crime map website 
 #This creates two lists, one of assault crimes and one of vehicle crimes 
@@ -20,6 +21,7 @@ while(i<len(data)):
 		vehicleTheftCrimes.append(data[i])
 	i = i+1
 
+print assaultCrimes
 
 #finding the total range of the latitudes 
 lat_min = lat[0]
@@ -132,7 +134,10 @@ for childs in root:
 		lst.append(childs.attrib['lat'])
 		lst.append(childs.attrib['lon'])
 		locations[childs.attrib['id']] = lst
-print locations
+#print locations
+
+
+
 
 
 # create a dictionary called ways in which the key is the ID of the way, and the value is the list of nodes that are connected to form that way
@@ -152,3 +157,46 @@ for childs in root:
 
 
 
+
+# creating function to calculate distance between two GPS points, taken from here: http://stackoverflow.com/questions/15736995/how-can-i-quickly-estimate-the-distance-between-two-latitude-longitude-points
+def haversine(lon1, lat1, lon2, lat2):
+    """
+    Calculate the great circle distance between two points 
+    on the earth (specified in decimal degrees)
+    """
+    # convert decimal degrees to radians 
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+    # haversine formula 
+    dlon = lon2 - lon1 
+    dlat = lat2 - lat1 
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * asin(sqrt(a)) 
+    km = 6367 * c
+    conversionFactorFromKMtoMiles = 0.62137
+    miles = conversionFactorFromKMtoMiles*km
+    return miles
+
+
+
+
+
+
+
+'''
+a = 0
+templist = []
+for key in locations:
+	while(a<3):
+		templist.append(locations[key])
+		a = a+1
+
+
+lat1= templist[0][0]
+lon1 = templist[0][1]
+lat2 = templist[1][0]
+lon2 = templist[1][1]
+#print type(lat1)
+
+temp = haversine(float(lon1), float(lat1), float(lon2), float(lat2))
+print temp
+'''
