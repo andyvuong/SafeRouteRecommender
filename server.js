@@ -11,9 +11,11 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
-app.get('/',function(req,res){
-    res.sendFile(path.join(__dirname+'/views/template/index.html'));
-});
+
+app.use('/', express.static('views/template'));
+//app.get('/',function(req,res){
+//    res.sendFile(path.join(__dirname+'/views/template/index.html'));
+//});
 
 // router
 var router = require('./router')(app);
