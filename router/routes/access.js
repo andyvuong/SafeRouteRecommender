@@ -5,6 +5,13 @@ var request = require('request');
 var express = require('express');
 var router = express.Router();
 
+router.post('/test', function (req, res) { 
+    console.log(req.body.fname);
+    res.send({message: 'successful'});
+});
+
+
+
 /**
 * METHOD: POST
 * PARAMS: {origin}, {destination}
