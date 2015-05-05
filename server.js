@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.use('/', express.static('template/views'));
+app.use('/', express.static('views/template'));
 //app.get('/',function(req,res){
 //    res.sendFile(path.join(__dirname+'/views/template/index.html'));
 //});
