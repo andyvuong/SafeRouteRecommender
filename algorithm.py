@@ -2,6 +2,10 @@ import json
 import xml.etree.ElementTree as ET
 from math import radians, cos, sin, asin, sqrt
 
+#make sure you have Python installed 
+
+
+
 #This reads in the crimes.json file that contains the JSON data that was crawled from the UIUC crime map website 
 #This creates two lists, one of assault crimes and one of vehicle crimes 
 filepath = "C:\\Users\\Disha\\Desktop\\SafeRouteRecommender\\crimes.json"
@@ -115,47 +119,6 @@ for i in VT_lons:
 
 #print("The range of the vechicle theft latitudes is " + str(VT_lats_min)+  " to " + str(VT_lats_max))
 #print("The range of the vehicle theft longitudes is " + str(VT_lons_min) + " to " + str(VT_lons_max))
-
-
-
-#Here we parse the XML data that I pulled from Open Street Map. I chose  a large portion of campus for sample data 
-#The data was pushed to "smalldata.xml"
-
-
-
-tree = ET.parse('smalldata.xml')
-root = tree.getroot()
-
-#create a dictionary of locations where the key is the node ID and the value is a tuple list of that nodes' latitude and longitude  
-locations = {}
-for childs in root:
-	if(childs.tag == 'node'):
-		lst = []
-		lst.append(childs.attrib['lat'])
-		lst.append(childs.attrib['lon'])
-		locations[childs.attrib['id']] = lst
-#print locations
-
-
-
-
-
-# create a dictionary called ways in which the key is the ID of the way, and the value is the list of nodes that are connected to form that way
-
-ways = {}
-
-for childs in root:
-
-	if(childs.tag == 'way'):
-		lst = []
-		for children in childs:
-			if(children.tag == 'nd'):
-				lst.append(children.attrib['ref'])
-		ways[childs.attrib['id']] = lst
-#print ways
-
-
-
 
 
 # creating function to calculate distance between two GPS points, taken from here: http://stackoverflow.com/questions/15736995/how-can-i-quickly-estimate-the-distance-between-two-latitude-longitude-points
