@@ -65,6 +65,39 @@
 			display: none;
 		}
 
+/*button*/
+
+.button
+{
+color: black;
+font-family: Verdana, Arial
+}
+
+
+/*LEFT AND RIGHT INPUTS*/
+.two-col {
+    overflow: hidden;/* Makes this div contain its floats */
+}
+
+.two-col .col1,
+.two-col .col2 {
+    width 49%;
+}
+
+.two-col .col1 {
+    padding-left: 400px;
+    float: left;
+}
+
+.two-col .col2 {
+    padding-right: 400px;
+    float: right;
+}
+
+.two-col label {
+    display: block;
+}
+
 /* Wrapper */
 	@-moz-keyframes wrapper { 0% { opacity: 0; } 100% { opacity: 1; } }
 	@-webkit-keyframes wrapper { 0% { opacity: 0; } 100% { opacity: 1; } }
@@ -204,7 +237,7 @@
 		position: relative;
 		text-align: center;
 		top: -1em;
-		vertical-align: 90px;
+		vertical-align: 60px;
 		width: 90%;
 	}
 
