@@ -7,7 +7,8 @@
 ``````````````
 npm install
 
+pip install -r requirements.txt
+
 node server.js
 
-pip install -r requirements.txt
 ``````````````
