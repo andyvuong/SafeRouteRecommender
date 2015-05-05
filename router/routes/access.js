@@ -1,7 +1,3 @@
-/**
-* Web app access routes for the python client-server
-*/
-var request = require('request');
 var express = require('express');
 var router = express.Router();
 
@@ -9,7 +5,6 @@ router.post('/test', function (req, res) {
     console.log(req.body.fname);
     res.send({message: 'successful'});
 });
-
 
 
 /**
@@ -29,13 +24,12 @@ router.post('/map', function (req, res) {
     else {
         /**
         * Other pre-processing here? Otherwise pass the parameters to our function
+        * ... more code later
         */
-        var payload = { origin: locationA, destination: locationB};
-        request('/someroutehere',
-                { json: true, body: payload },
-                function(err, res, body) { // `body` is a js object if request was successful
-                    console.log('Request Sent from Node Server');
-        });
+        
+        // you're done if you see this!
+        console.log("SUCCESS");
+        res.json({message: 'Success'});
     }
 });
 

@@ -2,9 +2,25 @@ var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var path = require("path");
-var pythonShell = require("python-shell");
-
+var PythonShell = require("python-shell");
 var app = express();
+
+/** Commented this out for now, we'll be using this later
+
+var PythonShell = require('python-shell');
+var options = {
+    mode: 'text',
+    scriptPath: '.',
+    args: ['208 N. Harvey Urbana IL 61801', '201 N. Goodwin Avenue Urbana IL 61801']
+};
+var pyshell = new PythonShell('recommender.py', options);
+pyshell.on('error', function (err) {
+    console.log(err);
+});
+pyshell.on('message', function (message) {
+    console.log(message);
+});
+**/
 
 // Configs
 app.use(morgan('dev'));
@@ -14,9 +30,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use('/', express.static('views/template'));
-//app.get('/',function(req,res){
-//    res.sendFile(path.join(__dirname+'/views/template/index.html'));
-//});
 
 // router
 var router = require('./router')(app);
