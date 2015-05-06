@@ -25,26 +25,45 @@
 						<h1>Safe Route Recommender</h1>
 						<p>Trustworthy &nbsp;&bull;&nbsp; Secure &nbsp;&bull;&nbsp; Reliable</p>
 				
-					<form method = "post">
+					<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+					<script type="text/javascript">
+
+					$(function(){
+						$("#Submit").click(function() {
+    						$.ajax({
+        					   type: "POST",
+        					   url: "http:localhost:8000/access/map",
+       					       data: $("#Submit").serialize(),
+        					   success: function(data)
+         					  {
+          					     alert(data); 
+         					  }
+      				   });
+
+    					return false; 
+						});
+						});
+					</script>
+					<!--add something to action-->
+					<form action = "" method = "post">
 					<div class = "two-col">
 						<div class = "col1">
 						Current Location: <br>
-						<input type="text" name="from" style="color:#000000;">
+						<input type="text" name="from" id="from" style="color:#000000;">
 					    </div>
 
 						<div class = "col2">
 						Destination: <br>
-						<input type="text" name="to" style="color:#000000;">
+						<input type="text" name="to" id="from" style="color:#000000;">
 					    </div>
 					    <br>
 					  
 					</div>
 					<br>
-					 <input type="submit" value="Submit" class="button">
-
+					<input type="submit" value="Submit" id= "Submit" class="button">
 					</form>
-			
 					</header>
+
 
 			
 

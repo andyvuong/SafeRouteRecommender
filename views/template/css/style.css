@@ -85,12 +85,12 @@ font-family: Verdana, Arial
 }
 
 .two-col .col1 {
-    padding-left: 400px;
+    padding-left: 35%;
     float: left;
 }
 
 .two-col .col2 {
-    padding-right: 400px;
+    padding-right: 35%;
     float: right;
 }
 
