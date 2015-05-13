@@ -35,7 +35,7 @@ router.post('/map', function (req, res) {
             scriptPath: '.',
             args: [locationA, locationB]
         };
-        var pyshell = new PythonShell('recommender_01.py', options);
+        var pyshell = new PythonShell('recommender_02.py', options);
         // message handlers
         pyshell.on('error', function (err) {
             console.log("Error: Python Shell Error");
