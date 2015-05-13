@@ -1,2 +1,2 @@
-google-api-python-client
-pygeocoder==1.2.5
+git+git://github.com/googlemaps/google-maps-services-python.git
+git+git://github.com/rapidfat/pygeocoder.git
