@@ -19,6 +19,6 @@ var router = require('./router')(app);
 
 
 module.exports = app;
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 console.log("Safe Route Recommender");
 console.log("Listening on port 3000");
