@@ -1,2 +1,2 @@
+google-api-python-client
 pygeocoder==1.2.5
-google-api-python-client==1.4.0
