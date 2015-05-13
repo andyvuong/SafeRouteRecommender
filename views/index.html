@@ -57,10 +57,12 @@
                     document.getElementById('map-canvas').setAttribute("style","height:" + h + "px;");
                 });
 
-                mapPath = [];
+                mapPath = null;
 
                 $('#submit').click(function (e) {
-                    //map.clear();
+                    if(mapPath != null) {
+                        mapPath.setMap(null);
+                    }
                     e.preventDefault();
                     var form = $('#form').serialize();
                     $.ajax({
