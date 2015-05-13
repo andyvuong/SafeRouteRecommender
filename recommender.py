@@ -190,6 +190,7 @@ def main():
                                         #the waypoint does match one of the crime scenes, then we will try to find an alternate route between the previous point and next point,
                                         #hopefully avoiding the crime point. 
                                         #print aclocations
+    # Leave this, returns a "message" to pythonshell
     print(theRoute)
 
 if __name__ == '__main__':
