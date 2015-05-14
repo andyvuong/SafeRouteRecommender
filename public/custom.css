@@ -1,0 +1,29 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding:0;
+    width: 100%;
+}
+
+ #map-canvas {
+    height: 500px;
+    padding:0;
+    width: 99%; 
+ }
+
+ .container-fluid, .row {
+    min-height: 100%;
+ }
+
+ h1 {
+    margin-left: 1%;
+ }
+
+ h3 {
+    margin-left: 4%;
+ }
+
+ p {
+    margin-left: 4%;
+    margin-right: 4%;
+ }
