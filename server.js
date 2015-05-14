@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.use('/', express.static('views'));
+app.use('/', express.static('public'));
 
 // router
 var router = require('./router')(app);
